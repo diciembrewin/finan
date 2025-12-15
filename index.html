@@ -41,7 +41,6 @@ header .icon{
 header .title{
   font-size:20px;
   font-weight:600;
-  letter-spacing:.5px;
 }
 
 /* ================= HERO ================= */
@@ -70,7 +69,6 @@ header .title{
   font-weight:300;
   margin:8px 0 0;
   color:#00ff99;
-  letter-spacing:1px;
 }
 
 /* ================= BUTTON ================= */
@@ -84,71 +82,68 @@ header .title{
   background:linear-gradient(135deg,#00ff99,#00cc77);
   color:#022015;
   cursor:pointer;
-  box-shadow:
-    0 0 20px rgba(0,255,153,.55),
-    inset 0 0 10px rgba(255,255,255,.2);
+  box-shadow:0 0 20px rgba(0,255,153,.55);
   transition:.25s;
 }
 
 .hero button:hover{
   transform:translateY(-2px) scale(1.04);
-  box-shadow:
-    0 0 30px rgba(0,255,153,.9);
 }
 
 /* ================= FOOTER ================= */
 footer{
-  padding:36px 20px;
+  padding:40px 20px;
   background:linear-gradient(180deg,#050b0f,#030709);
   border-top:1px solid rgba(0,255,153,.25);
 }
 
 footer h3{
   font-size:22px;
-  margin-bottom:18px;
-  font-weight:600;
+  margin-bottom:14px;
   color:#00ff99;
 }
 
 .footer-box{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:14px;
+  margin-bottom:30px;
 }
 
 .footer-icon{
-  width:64px;
-  height:64px;
-  border-radius:20px;
+  width:60px;
+  height:60px;
+  border-radius:18px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
+  font-size:26px;
   background:rgba(0,255,153,.15);
   border:1px solid rgba(0,255,153,.35);
-  box-shadow:0 0 15px rgba(0,255,153,.35);
 }
 
 footer .text{
-  font-size:18px;
-  color:#d6fff0;
+  font-size:17px;
 }
 
-/* ================= LEGAL ================= */
-.legal{
-  text-align:center;
-  margin-top:26px;
-}
-
-.legal a{
-  color:#7affc9;
+/* ================= TERMS ================= */
+.terms{
+  max-width:900px;
+  margin:auto;
   font-size:14px;
-  font-weight:600;
-  text-decoration:none;
+  line-height:1.6;
+  color:#c9f8e5;
+  border-top:1px solid rgba(0,255,153,.25);
+  padding-top:25px;
 }
 
-.legal a:hover{
-  text-decoration:underline;
+.terms h4{
+  color:#00ff99;
+  margin-bottom:10px;
+}
+
+.terms p{
+  margin-bottom:10px;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -183,8 +178,21 @@ footer .text{
     <span class="text">Sitio informativo sobre cocina colombiana</span>
   </div>
 
-  <div class="legal">
-    <a href="terminos.html">Términos y Condiciones</a>
+  <!-- ================= TÉRMINOS ================= -->
+  <div class="terms">
+    <h4>Términos y Condiciones</h4>
+
+    <p>Este sitio web es de carácter informativo y tiene como objetivo presentar contenido relacionado con la gastronomía colombiana.</p>
+
+    <p>No se realizan ventas, pagos, cotizaciones, reservas ni pedidos en línea a través de este sitio.</p>
+
+    <p>Este sitio no ofrece productos financieros, créditos, préstamos, seguros ni servicios relacionados.</p>
+
+    <p>La información presentada puede cambiar sin previo aviso y no representa una oferta comercial.</p>
+
+    <p>El uso de este sitio implica la aceptación de estos términos.</p>
+
+    <p><strong>Última actualización:</strong> 2025</p>
   </div>
 </footer>
 
