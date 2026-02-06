@@ -1,209 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comida Colombiana Tradicional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-html, body{
-  margin:0;
-  padding:0;
-  width:100%;
-  overflow-x:hidden;
-  font-family:'Inter',system-ui,Arial,sans-serif;
-  background:#050b0f;
-  color:#e5fef1;
-}
-*{box-sizing:border-box}
+  <title>Vuelo 360 Hoy es Más | Información de Viajes</title>
 
-/* ===== HEADER ===== */
-header{
-  position:sticky;
-  top:0;
-  z-index:99;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:14px 22px;
-  background:rgba(0,255,153,.12);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,255,153,.25);
-}
-header .icon{font-size:26px;color:#00ff99}
-header .title{font-size:20px;font-weight:600}
+  <meta name="description" content="Vuelo 360 Hoy es Más ofrece información y asistencia personalizada sobre vuelos y opciones de viaje. Atención con asesores humanos.">
+  <meta name="robots" content="index, follow">
 
-/* ===== HERO ===== */
-.hero{
-  min-height:70vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 20px;
-  background:
-    radial-gradient(circle at top, rgba(0,255,153,.18), transparent 60%),
-    linear-gradient(180deg,#07140e,#050b0f);
-}
-.hero h1{
-  font-size:46px;
-  font-weight:300;
-  margin:0;
-  text-shadow:0 0 18px rgba(0,255,153,.4);
-}
-.hero h2{
-  font-size:32px;
-  font-weight:300;
-  margin-top:8px;
-  color:#00ff99;
-}
-.hero button{
-  margin-top:36px;
-  padding:16px 48px;
-  font-size:18px;
-  font-weight:700;
-  border-radius:14px;
-  border:1px solid #00ff99;
-  background:linear-gradient(135deg,#00ff99,#00cc77);
-  color:#022015;
-  cursor:pointer;
-  box-shadow:0 0 22px rgba(0,255,153,.6);
-  transition:.25s;
-}
-.hero button:hover{transform:scale(1.05)}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-/* ===== MENU ===== */
-.menu{
-  max-width:1000px;
-  margin:60px auto;
-  padding:0 20px;
-}
-.menu h3{
-  text-align:center;
-  font-size:30px;
-  color:#00ff99;
-  margin-bottom:30px;
-}
-.categoria{
-  margin-top:35px;
-  font-size:22px;
-  color:#7affc9;
-  border-bottom:1px solid rgba(0,255,153,.25);
-  padding-bottom:6px;
-}
-.item{
-  display:flex;
-  justify-content:space-between;
-  padding:14px 10px;
-  margin-top:10px;
-  background:rgba(255,255,255,.04);
-  border-radius:12px;
-}
-.item span{font-size:17px}
-.precio{color:#00ff99;font-weight:700}
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
 
-/* ===== FOOTER ===== */
-footer{
-  padding:40px 20px;
-  background:linear-gradient(180deg,#050b0f,#030709);
-  border-top:1px solid rgba(0,255,153,.25);
-}
-footer h3{
-  font-size:22px;
-  color:#00ff99;
-  margin-bottom:14px;
-}
-.footer-box{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:30px;
-}
-.footer-icon{
-  width:60px;
-  height:60px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  background:rgba(0,255,153,.15);
-  border:1px solid rgba(0,255,153,.35);
-}
-footer .text{font-size:17px}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#ffffff;
+      color:#222;
+      line-height:1.6;
+    }
 
-/* ===== TERMS ===== */
-.terms{
-  max-width:900px;
-  margin:auto;
-  font-size:14px;
-  line-height:1.6;
-  color:#c9f8e5;
-  border-top:1px solid rgba(0,255,153,.25);
-  padding-top:25px;
-}
-.terms h4{color:#00ff99;margin-bottom:10px}
+    header{
+      position:sticky;
+      top:0;
+      background:#ffffff;
+      border-bottom:1px solid #eee;
+      padding:1rem 1.5rem;
+      z-index:100;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:600px){
-  .hero h1{font-size:34px}
-  .hero h2{font-size:24px}
-}
-</style>
+    header h1{
+      font-size:1.1rem;
+      font-weight:800;
+      color:#0a4cff;
+    }
 
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17807832300"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17807832300'); </script>
+    nav a{
+      margin-left:1rem;
+      text-decoration:none;
+      color:#444;
+      font-weight:600;
+      font-size:.9rem;
+    }
+
+    nav a:hover{color:#0a4cff}
+
+    section{
+      padding:4.5rem 1.5rem;
+      text-align:center;
+    }
+
+    .hero{
+      background:linear-gradient(180deg,#f6f9ff,#ffffff);
+    }
+
+    .hero h2{
+      font-size:2.4rem;
+      margin-bottom:1rem;
+      color:#111;
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:0 auto 1.6rem;
+      color:#555;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:.85rem 1.5rem;
+      border-radius:.6rem;
+      font-weight:700;
+      text-decoration:none;
+      margin:.3rem;
+      font-size:.95rem;
+    }
+
+    .btn-primary{
+      background:#0a4cff;
+      color:#fff;
+    }
+
+    .btn-outline{
+      border:2px solid #0a4cff;
+      color:#0a4cff;
+      background:#fff;
+    }
+
+    .features{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      gap:1.5rem;
+    }
+
+    .feature{
+      padding:1.8rem;
+      border:1px solid #eee;
+      border-radius:1rem;
+      background:#fff;
+      text-align:left;
+    }
+
+    .feature h3{
+      margin-bottom:.5rem;
+      color:#0a4cff;
+    }
+
+    .feature p{color:#555}
+
+    form{
+      max-width:620px;
+      margin:auto;
+      display:grid;
+      gap:1rem;
+      text-align:left;
+    }
+
+    input, textarea{
+      padding:.9rem;
+      border-radius:.5rem;
+      border:1px solid #ddd;
+      font-family:inherit;
+      font-size:.95rem;
+    }
+
+    textarea{min-height:120px}
+
+    footer{
+      background:#f7f7f7;
+      padding:2.5rem 1.5rem;
+      text-align:center;
+      font-size:.85rem;
+      color:#666;
+    }
+
+    .legal{
+      max-width:1000px;
+      margin:0 auto;
+      text-align:left;
+      font-size:.9rem;
+      color:#555;
+    }
+
+    .legal p{margin-bottom:1rem}
+
+    @media(min-width:768px){
+      .features{grid-template-columns:repeat(3,1fr)}
+      header h1{font-size:1.2rem}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <span class="icon">🍽️</span>
-  <span class="title">Comida Colombiana</span>
+  <h1>✈️ Vuelo 360 Hoy es Más</h1>
+  <nav>
+    <a href="#info">Información</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#terminos">Términos</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <h1>Comida Colombiana</h1>
-  <h2>Tradicional y Típica</h2>
-  <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
-    Ver menú
-  </button>
+  <h2>Tu viaje comienza con mejor información</h2>
+  <p>
+    Vuelo 360 Hoy es Más ofrece asistencia informativa sobre vuelos,
+    rutas y alternativas de viaje. Un asesor humano te ayudará
+    a evaluar opciones según tus necesidades.
+  </p>
+  <a href="#contacto" class="btn btn-primary">Solicitar información</a>
+  <a href="#terminos" class="btn btn-outline">Ver condiciones</a>
 </section>
 
-<!-- ===== MENU ===== -->
-<section class="menu" id="menu">
-  <h3>Menú</h3>
+<section id="info">
+  <h2>¿Cómo podemos ayudarte?</h2>
+  <p>Servicios informativos orientados al viajero.</p>
 
-  <div class="categoria">Desayunos</div>
-  <div class="item"><span>Calentado con huevo</span><span class="precio">$12.000</span></div>
-  <div class="item"><span>Arepa con queso</span><span class="precio">$6.000</span></div>
-  <div class="item"><span>Huevos pericos</span><span class="precio">$10.000</span></div>
+  <div class="features">
+    <div class="feature">
+      <h3>Consulta de rutas</h3>
+      <p>Información sobre rutas disponibles, escalas y combinaciones posibles.</p>
+    </div>
+    <div class="feature">
+      <h3>Asistencia personalizada</h3>
+      <p>Un asesor humano analiza tu solicitud y te orienta según disponibilidad.</p>
+    </div>
+    <div class="feature">
+      <h3>Información clara</h3>
+      <p>Sin ventas directas ni cobros en línea.</p>
+    </div>
+  </div>
+</section>
 
-  <div class="categoria">Almuerzos</div>
-  <div class="item"><span>Bandeja paisa</span><span class="precio">$18.000</span></div>
-  <div class="item"><span>Sancocho</span><span class="precio">$20.000</span></div>
-  <div class="item"><span>Arroz con pollo</span><span class="precio">$14.000</span></div>
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>
+    Completa el formulario y un asesor se pondrá en contacto contigo.
+  </p>
 
-  <div class="categoria">Bebidas</div>
-  <div class="item"><span>Jugo natural</span><span class="precio">$5.000</span></div>
-  <div class="item"><span>Gaseosa</span><span class="precio">$4.000</span></div>
-  <div class="item"><span>Agua</span><span class="precio">$3.000</span></div>
+  <form method="post" action="#">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <input type="tel" name="telefono" placeholder="Teléfono" required>
+    <textarea name="mensaje" placeholder="Origen, destino, fechas aproximadas, pasajeros" required></textarea>
+    <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+  </form>
+</section>
+
+<section id="terminos">
+  <h2>Términos y Condiciones</h2>
+
+  <div class="legal">
+    <p><strong>Última actualización:</strong> 2026</p>
+
+    <p>
+      <strong>vuelo360hoyesmas.online</strong> es un sitio informativo
+      que brinda orientación general sobre viajes.
+    </p>
+
+    <p>
+      No se realizan ventas, pagos ni reservas directas.
+      El sitio no representa aerolíneas ni agencias oficiales.
+    </p>
+
+    <p>
+      La información proporcionada es referencial y puede variar
+      según fechas, disponibilidad y proveedores externos.
+    </p>
+
+    <p>
+      El envío del formulario no implica obligación contractual alguna.
+    </p>
+
+    <p>
+      Contacto legal:
+      <strong>contacto@vuelo360hoyesmas.online</strong>
+    </p>
+  </div>
 </section>
 
 <footer>
-  <h3>Gastronomía Colombiana</h3>
-  <div class="footer-box">
-    <div class="footer-icon">🍲</div>
-    <span class="text">Sitio informativo sobre cocina colombiana</span>
-  </div>
-
-  <div class="terms">
-    <h4>Términos y Condiciones</h4>
-    <p>Sitio informativo. No se realizan ventas, pagos, pedidos ni reservas.</p>
-    <p>Este sitio no ofrece productos financieros, créditos, préstamos ni seguros.</p>
-    <p>La información presentada es referencial y puede cambiar sin previo aviso.</p>
-    <p><strong>Actualización:</strong> 2025</p>
-  </div>
+  <p><strong>Vuelo 360 Hoy es Más</strong></p>
+  <p>Servicio informativo de viajes</p>
+  <p>📧 contacto@vuelo360hoyesmas.online</p>
+  <p>© 2026 — Todos los derechos reservados</p>
 </footer>
 
 </body>
